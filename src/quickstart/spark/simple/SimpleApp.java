@@ -7,7 +7,8 @@ import org.apache.spark.api.java.function.Function;
 public class SimpleApp {
 	public static void main(String[] args) {
 		// Should be some file on your system
-		String logFile = "YOUR_SPARK_HOME/README.md"; 
+		String logFile = args[0];
+		System.out.println("Open file on your system: " + logFile);
 		
 		SparkConf conf = new SparkConf().setAppName("Simple Application");
 		JavaSparkContext sc = new JavaSparkContext(conf);
